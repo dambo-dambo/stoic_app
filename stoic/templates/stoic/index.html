@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<h1>{{ title }}</h1>
+
+{% for item in stoic %}
+    <div>
+        <p>{{ item.title }}</p>
+        <p>{{ item.content }}</p>
+        #тут можем изменить наполнение страницы
+        <p>{{ item.created_at|date:"Y-m-d H:i:s" }}</p>
+    </div>
+    <hr>
+{% endfor %}
+
+</body>
+</html>
