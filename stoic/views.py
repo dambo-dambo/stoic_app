@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView
 from .forms import StoicForm
 from .models import Stoic, Month
 
@@ -36,14 +37,17 @@ class StoicByMonth(ListView):
         return Stoic.objects.filter(month_id=self.kwargs['month_id'], is_published=True)
 
 
-
-
 class ViewStoic(DetailView):
     model = Stoic
     context_object_name = 'stoic_item'
-    template_name = 'stoic/stoic_detail.html'
+    # template_name = 'stoic/stoic_detail.html'
     # pk_url_kwarg = 'stoic_id'
 
+
+class CreateStoic(CreateView):
+    form_class = StoicForm
+    template_name = 'stoic/add_stoic.html'
+    success_url = reverse_lazy('home')
 
 # def index(request):
 #     stoic = Stoic.objects.all()
@@ -61,19 +65,19 @@ class ViewStoic(DetailView):
 #     return render(request, 'stoic/month.html', {'stoic': stoic, 'month': month})
 
 
-def view_stoic(request, stoic_id):
-    stoic_item = get_object_or_404(Stoic, pk=stoic_id)
-    return render(request, 'stoic/view_stoic.html', {"stoic_item": stoic_item})
-
-
-def add_stoic(request):
-    if request.method == 'POST':
-        form = StoicForm(request.POST)
-        if form.is_valid():
-
-            stoic = form.save()
-            return redirect(stoic)
-    else:
-        form = StoicForm()
-    return render(request, 'stoic/add_stoic.html', {'form': form})
+# def view_stoic(request, stoic_id):
+#     stoic_item = get_object_or_404(Stoic, pk=stoic_id)
+#     return render(request, 'stoic/view_stoic.html', {"stoic_item": stoic_item})
+#
+#
+# def add_stoic(request):
+#     if request.method == 'POST':
+#         form = StoicForm(request.POST)
+#         if form.is_valid():
+#
+#             stoic = form.save()
+#             return redirect(stoic)
+#     else:
+#         form = StoicForm()
+#     return render(request, 'stoic/add_stoic.html', {'form': form})
 

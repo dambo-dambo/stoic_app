@@ -9,5 +9,6 @@ urlpatterns = [
     path('month/<int:month_id>/', StoicByMonth.as_view(), name='month'),
     # path('stoic/<int:stoic_id>/', view_stoic, name='view_stoic'),
     path('stoic/<int:pk>/', ViewStoic.as_view(), name='view_stoic'),
-    path('stoic/add-stoic/', add_stoic, name='add_stoic'),
+    # path('stoic/add-stoic/', add_stoic, name='add_stoic'),
+    path('stoic/add-stoic/', CreateStoic.as_view(), name='add_stoic'),
 ]
