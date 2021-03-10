@@ -12,7 +12,7 @@ class Stoic(models.Model):
     month = models.ForeignKey('Month', on_delete=models.PROTECT, verbose_name='Месяц')
 
     def get_absolute_url(self):
-        return reverse('view_stoic', kwargs={"stoic_id": self.pk})
+        return reverse('view_stoic', kwargs={"pk": self.pk})
 
     def __str__(self):
         return self.title

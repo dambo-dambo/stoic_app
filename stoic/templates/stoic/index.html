@@ -12,7 +12,7 @@
 {% for item in stoic %}
 <div class="card mb-3">
     <div class="card-header">
-        Месяц: <a href="{{ item.category.get_absolute_url }}">{{ item.month }}</a>
+        Месяц: <a href="{{ item.month.get_absolute_url }}">{{ item.month }}</a>
     </div>
     <div class="card-body">
         <div class="media">
