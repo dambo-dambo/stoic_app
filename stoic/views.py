@@ -36,3 +36,4 @@ def add_stoic(request):
     else:
         form = StoicForm()
     return render(request, 'stoic/add_stoic.html', {'form': form})
+
