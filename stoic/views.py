@@ -1,8 +1,24 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-
+from django.views.generic import ListView
 from .forms import StoicForm
 from .models import Stoic, Month
+
+
+class HomeStoic(ListView):
+    model = Stoic
+    template_name = 'stoic/home_stoic_list.html'
+    context_object_name = 'stoic'
+    # extra_context = {'title': 'Главная'}
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Главная страница'
+        return context
+#фильтруем запрос для отображения
+    def get_queryset(self):
+        return Stoic.objects.filter(is_published=True)
+
 
 
 def index(request):
