@@ -22,7 +22,6 @@ def get_month(request, month_id):
 
 
 def view_stoic(request, stoic_id):
-    #stoic_item = Stoic.objects.get(pk=news_id)
     stoic_item = get_object_or_404(Stoic, pk=stoic_id)
     return render(request, 'stoic/view_stoic.html', {"stoic_item": stoic_item})
 
@@ -31,9 +30,8 @@ def add_stoic(request):
     if request.method == 'POST':
         form = StoicForm(request.POST)
         if form.is_valid():
-            # print(form.cleaned_data)
-            #распаковка словаря
-            stoic = Stoic.objects.create(**form.cleaned_data)
+
+            stoic = form.save()
             return redirect(stoic)
     else:
         form = StoicForm()

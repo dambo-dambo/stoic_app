@@ -9,7 +9,7 @@ class Stoic(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Обновлено')
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Изображение', blank=True)
     is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
-    month = models.ForeignKey('Month', on_delete=models.PROTECT, null=True, verbose_name='Месяц')
+    month = models.ForeignKey('Month', on_delete=models.PROTECT, verbose_name='Месяц')
 
     def get_absolute_url(self):
         return reverse('view_stoic', kwargs={"stoic_id": self.pk})

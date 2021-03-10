@@ -1,14 +1,14 @@
 from django import forms
-from .models import Month
+from .models import Stoic
 
 
-class StoicForm(forms.Form):
-    title = forms.CharField(max_length=150, label='Заголовок', widget=forms.TextInput(attrs={"class": "form-control"}))
-    content = forms.CharField(label='Текст', required=False, widget=forms.Textarea(attrs={
-        "class": "form-control",
-        "rows": 5
-    }))
-    is_published = forms.BooleanField(label='Опубликовать?', initial=True)
-    month = forms.ModelChoiceField(empty_label='Выберите месяц', label='Месяц',
-                                      queryset=Month.objects.all(),
-                                      widget=forms.Select(attrs={"class": "form-control"}))
+class StoicForm(forms.ModelForm):
+    class Meta:
+        model = Stoic
+        # fields = '__all__'
+        fields = ['title', 'content', 'is_published', 'month']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
+            'month': forms.Select(attrs={'class': 'form-control'}),
+        }
