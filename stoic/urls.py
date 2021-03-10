@@ -4,6 +4,6 @@ from .views import *
 
 
 urlpatterns = [
-    path('', index),
-    path('month/<int:month_id>/', get_month),
+    path('', index, name='home'),
+    path('month/<int:month_id>/', get_month, name='month'),
 ]

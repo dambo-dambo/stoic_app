@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e69b9a-fcc4-4649-910f-6bd16d220e16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stoic/templates/stoic/month.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stoic/templates/stoic/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/templates/stoic/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stoic/templates/stoic/month.html" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/templates/stoic/month.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stoic/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stoic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +129,7 @@
       <workItem from="1615315162832" duration="1492000" />
       <workItem from="1615317194414" duration="538000" />
       <workItem from="1615324425611" duration="244000" />
-      <workItem from="1615358544955" duration="11384000" />
+      <workItem from="1615358544955" duration="12659000" />
     </task>
     <task id="LOCAL-00001" summary="Create models, urls, views">
       <created>1615308059994</created>
@@ -174,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615368634595</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add sidebar&#10;change html &#10;add sidebar month page htmnl">
+      <created>1615371117980</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615371117980</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +205,8 @@
     <MESSAGE value="add Admin" />
     <MESSAGE value="add model month&#10;add admin features &#10;add filter" />
     <MESSAGE value="change html &#10;add images &#10;add bootstrap" />
-    <option name="LAST_COMMIT_MESSAGE" value="change html &#10;add images &#10;add bootstrap" />
+    <MESSAGE value="add sidebar&#10;change html &#10;add sidebar month page htmnl" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sidebar&#10;change html &#10;add sidebar month page htmnl" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/stoic_app$admin.coverage" NAME="admin Coverage Results" MODIFIED="1615317263480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stoic" />
