@@ -1,4 +1,5 @@
 {% load stoic_tags %}
+{% comment %}
 <div class="list-group">
     {% get_list_months as months %}
     {% for item in months %}
@@ -7,5 +8,5 @@
 </div>
 
 <br>
-
-{% show_months arg2='User' arg1='Hi' %}
+{% endcomment %}
+{% show_months %}

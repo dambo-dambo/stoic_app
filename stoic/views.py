@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
 from .models import Stoic, Month
@@ -18,3 +18,8 @@ def get_month(request, month_id):
     stoic = Stoic.objects.filter(month_id=month_id)
     month = Month.objects.get(pk=month_id)
     return render(request, 'stoic/month.html', {'stoic': stoic, 'month': month})
+
+def view_stoic(request, stoic_id):
+    #stoic_item = Stoic.objects.get(pk=news_id)
+    stoic_item = get_object_or_404(Stoic, pk=stoic_id)
+    return render(request, 'stoic/view_stoic.html', {"stoic_item": stoic_item})

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Stoic(models.Model):
@@ -9,6 +10,9 @@ class Stoic(models.Model):
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Изображение', blank=True)
     is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
     month = models.ForeignKey('Month', on_delete=models.PROTECT, null=True, verbose_name='Месяц')
+
+    def get_absolute_url(self):
+        return reverse('view_stoic', kwargs={"stoic_id": self.pk})
 
     def __str__(self):
         return self.title
@@ -21,6 +25,9 @@ class Stoic(models.Model):
 
 class Month(models.Model):
     title = models.CharField(max_length=150, db_index=True, verbose_name='Наименование месяца')
+
+    def get_absolute_url(self):
+        return reverse('month', kwargs={"month_id": self.pk})
 
     def __str__(self):
         return self.title
