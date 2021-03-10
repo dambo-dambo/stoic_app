@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e69b9a-fcc4-4649-910f-6bd16d220e16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stoic/templates/stoic/view_stoic.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stoic/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stoic/templates/stoic/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/templates/stoic/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stoic/templates/stoic/list_months.html" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/templates/stoic/list_months.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stoic/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stoic/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stoic/templates/stoic/add_stoic.html" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/templates/stoic/add_stoic.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stoic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inc/_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stoic_app/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/stoic_app/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +134,7 @@
       <workItem from="1615315162832" duration="1492000" />
       <workItem from="1615317194414" duration="538000" />
       <workItem from="1615324425611" duration="244000" />
-      <workItem from="1615358544955" duration="20723000" />
+      <workItem from="1615358544955" duration="26667000" />
     </task>
     <task id="LOCAL-00001" summary="Create models, urls, views">
       <created>1615308059994</created>
@@ -208,7 +206,28 @@
       <option name="project" value="LOCAL" />
       <updated>1615377003241</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add view stoic&#10;add get_absolute_url">
+      <created>1615387354458</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1615387354458</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add css,js style&#10;&#10;add STATIC_ROOT STATICFILES_DIRS">
+      <created>1615388907469</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615388907469</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add forms&#10;add add_stoic&#10;add urls with form&#10;change navigation&#10;add views add_stoic">
+      <created>1615390716343</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1615390716343</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +256,10 @@
     <MESSAGE value="change html &#10;add names for links" />
     <MESSAGE value="Двухуровневое наследование html" />
     <MESSAGE value="add tags&#10;add tags in html" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tags&#10;add tags in html" />
+    <MESSAGE value="add view stoic&#10;add get_absolute_url" />
+    <MESSAGE value="add css,js style&#10;&#10;add STATIC_ROOT STATICFILES_DIRS" />
+    <MESSAGE value="add forms&#10;add add_stoic&#10;add urls with form&#10;change navigation&#10;add views add_stoic" />
+    <option name="LAST_COMMIT_MESSAGE" value="add forms&#10;add add_stoic&#10;add urls with form&#10;change navigation&#10;add views add_stoic" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/stoic_app$admin.coverage" NAME="admin Coverage Results" MODIFIED="1615317263480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stoic" />
