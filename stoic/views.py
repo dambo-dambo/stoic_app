@@ -10,13 +10,11 @@ def index(request):
     context = {
         'stoic': stoic,
         'title': 'Список Рассуждений',
-        'months': months,
     }
     return render(request, template_name='stoic/index.html', context=context)
 
 
 def get_month(request, month_id):
     stoic = Stoic.objects.filter(month_id=month_id)
-    months = Month.objects.all()
     month = Month.objects.get(pk=month_id)
-    return render(request, 'stoic/month.html', {'stoic': stoic, 'months': months, 'month': month})
+    return render(request, 'stoic/month.html', {'stoic': stoic, 'month': month})

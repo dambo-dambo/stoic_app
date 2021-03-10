@@ -1,0 +1,6 @@
+<div class="list-group">
+    {{ arg1 }} {{ arg2 }}
+    {% for item in months %}
+    <a href="{% url 'month' item.pk %}" class="list-group-item list-group-item-action">{{ item.title }}</a>
+    {% endfor %}
+</div>
