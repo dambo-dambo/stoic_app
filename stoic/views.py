@@ -19,7 +19,7 @@ class HomeStoic(ListView):
 #фильтруем запрос для отображения
 
     def get_queryset(self):
-        return Stoic.objects.filter(is_published=True)
+        return Stoic.objects.filter(is_published=True).select_related('month')
 
 
 class StoicByMonth(ListView):
@@ -34,7 +34,7 @@ class StoicByMonth(ListView):
         return context
 
     def get_queryset(self):
-        return Stoic.objects.filter(month_id=self.kwargs['month_id'], is_published=True)
+        return Stoic.objects.filter(month_id=self.kwargs['month_id'], is_published=True).select_related('month')
 
 
 class ViewStoic(DetailView):

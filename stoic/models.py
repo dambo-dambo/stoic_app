@@ -10,6 +10,8 @@ class Stoic(models.Model):
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Изображение', blank=True)
     is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
     month = models.ForeignKey('Month', on_delete=models.PROTECT, verbose_name='Месяц')
+    views = models.IntegerField(default=0)
+
 
     def get_absolute_url(self):
         return reverse('view_stoic', kwargs={"pk": self.pk})
