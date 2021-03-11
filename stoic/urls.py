@@ -5,7 +5,8 @@ from .views import *
 
 urlpatterns = [
     path('register/', register, name='register'),
-    path('login/', login, name='login'),
+    path('login/', user_login, name='login'),
+    path('logout/', user_logout, name='logout'),
     path('test/', test, name='test'),
     path('', HomeStoic.as_view(), name='home'),
     # path('month/<int:month_id>/', get_month, name='month'),
