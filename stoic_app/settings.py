@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'stoic.apps.StoicConfig',
+    'captcha',
     'ckeditor',
     'ckeditor_uploader',
 ]

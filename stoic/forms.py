@@ -1,7 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from captcha.fields import CaptchaField
 
+from .admin import StoicAdminForm
 from .models import Stoic
 import re
 from django.core.exceptions import ValidationError
@@ -10,6 +12,7 @@ from django.core.exceptions import ValidationError
 class ContactForm(forms.Form):
     subject = forms.CharField(label='Тема', widget=forms.TextInput(attrs={'class': 'form-control'}))
     content = forms.CharField(label='Текст', widget=forms.Textarea(attrs={'class': 'form-control', "rows": 5}))
+    captcha = CaptchaField()
 
 
 class UserLoginForm(AuthenticationForm):
@@ -35,6 +38,7 @@ class StoicForm(forms.ModelForm):
         # fields = '__all__'
         fields = ['title', 'content', 'is_published', 'month']
         widgets = {
+
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
             'month': forms.Select(attrs={'class': 'form-control'}),

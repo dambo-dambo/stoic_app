@@ -9,6 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 
 from django.views.generic import ListView, DetailView, CreateView
+
+
 from .forms import StoicForm, UserRegisterForm, UserLoginForm, ContactForm
 from .models import Stoic, Month
 from .utils import MyMixin
@@ -45,14 +47,14 @@ def user_logout(request):
     return redirect('login')
 
 
-def test(request):
+def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             mail = send_mail(form.cleaned_data['subject'], form.cleaned_data['content'], 'yii2_loc@ukr.net', ['978@gmail.com'], fail_silently=True)
             if mail:
                 messages.success(request, 'Письмо отправлено!')
-                return redirect('test')
+                return redirect('contact')
             else:
                 messages.error(request, 'Ошибка отправки')
         else:
@@ -63,6 +65,7 @@ def test(request):
 
 
 class HomeStoic(MyMixin, ListView):
+
     model = Stoic
     template_name = 'stoic/home_stoic_list.html'
     context_object_name = 'stoic'
