@@ -1,10 +1,22 @@
+from django import forms
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 from .models import Stoic, Month
 
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+
+class StoicAdminForm(forms.ModelForm):
+    content = forms.CharField(widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = Stoic
+        fields = '__all__'
+
 
 class StoicAdmin(admin.ModelAdmin):
+    form = StoicAdminForm
     list_display = ('id', 'title', 'month', 'created_at', 'updated_at', 'is_published', 'get_photo')
     list_display_links = ('id', 'title')
     search_fields = ('title', 'content')
