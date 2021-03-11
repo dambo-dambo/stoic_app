@@ -4,6 +4,7 @@ from .views import *
 
 
 urlpatterns = [
+    path('test/', test, name='test'),
     path('', HomeStoic.as_view(), name='home'),
     # path('month/<int:month_id>/', get_month, name='month'),
     path('month/<int:month_id>/', StoicByMonth.as_view(), name='month'),
