@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e69b9a-fcc4-4649-910f-6bd16d220e16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stoic/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stoic/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stoic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stoic/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/_nav.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +138,7 @@
       <workItem from="1615317194414" duration="538000" />
       <workItem from="1615324425611" duration="244000" />
       <workItem from="1615358544955" duration="47038000" />
-      <workItem from="1615457719165" duration="15998000" />
+      <workItem from="1615457719165" duration="20859000" />
     </task>
     <task id="LOCAL-00001" summary="Create models, urls, views">
       <created>1615308059994</created>
@@ -340,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615481019175</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="add captcha">
+      <created>1615484513685</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1615484513685</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +370,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add Admin" />
     <MESSAGE value="add model month&#10;add admin features &#10;add filter" />
     <MESSAGE value="change html &#10;add images &#10;add bootstrap" />
     <MESSAGE value="add sidebar&#10;change html &#10;add sidebar month page htmnl" />
@@ -385,7 +394,8 @@
     <MESSAGE value="add authorization&#10;log in log out" />
     <MESSAGE value="add send e-mail" />
     <MESSAGE value="add CKEditor" />
-    <option name="LAST_COMMIT_MESSAGE" value="add CKEditor" />
+    <MESSAGE value="add captcha" />
+    <option name="LAST_COMMIT_MESSAGE" value="add captcha" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/stoic_app$admin.coverage" NAME="admin Coverage Results" MODIFIED="1615317263480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stoic" />
