@@ -1,3 +1,5 @@
+from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.urls import reverse_lazy
@@ -8,6 +10,24 @@ from django.views.generic import ListView, DetailView, CreateView
 from .forms import StoicForm
 from .models import Stoic, Month
 from .utils import MyMixin
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Вы успешно зарегистрировались')
+            return redirect('login')
+        else:
+            messages.error(request, 'Ошибка регистрации')
+    else:
+        form = UserCreationForm()
+    return render(request, 'stoic/register.html', {"form": form})
+
+
+def login(request):
+    return render(request, 'stoic/login.html')
 
 def test(request):
     objects = ['john1', 'paul2', 'george3', 'ringo4', 'john5', 'paul6', 'george7']
