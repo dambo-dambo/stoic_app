@@ -1,20 +1,24 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView
 from .forms import StoicForm
 from .models import Stoic, Month
+from .utils import MyMixin
 
 
-class HomeStoic(ListView):
+class HomeStoic(MyMixin, ListView):
     model = Stoic
     template_name = 'stoic/home_stoic_list.html'
     context_object_name = 'stoic'
+    mixin_prop = 'hello world'
     # extra_context = {'title': 'Главная'}
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Главная страница'
+        context['title'] = self.get_upper('Стоик')
+        context['mixin_prop'] = self.get_prop()
         return context
 #фильтруем запрос для отображения
 
@@ -22,7 +26,7 @@ class HomeStoic(ListView):
         return Stoic.objects.filter(is_published=True).select_related('month')
 
 
-class StoicByMonth(ListView):
+class StoicByMonth(MyMixin, ListView):
     model = Stoic
     template_name = 'stoic/home_stoic_list.html'
     context_object_name = 'stoic'
@@ -30,7 +34,7 @@ class StoicByMonth(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = Month.objects.get(pk=self.kwargs['month_id'])
+        context['title'] = self.get_upper(Month.objects.get(pk=self.kwargs['month_id']))
         return context
 
     def get_queryset(self):
@@ -44,10 +48,13 @@ class ViewStoic(DetailView):
     # pk_url_kwarg = 'stoic_id'
 
 
-class CreateStoic(CreateView):
+class CreateStoic(LoginRequiredMixin, CreateView):
     form_class = StoicForm
     template_name = 'stoic/add_stoic.html'
-    success_url = reverse_lazy('home')
+    #success_url = reverse_lazy('home')
+    login_url = '/admin/'
+    #raise_exception = True
+
 
 # def index(request):
 #     stoic = Stoic.objects.all()
