@@ -1,3 +1,4 @@
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
@@ -11,7 +12,7 @@ from django.core.exceptions import ValidationError
 
 class ContactForm(forms.Form):
     subject = forms.CharField(label='Тема', widget=forms.TextInput(attrs={'class': 'form-control'}))
-    content = forms.CharField(label='Текст', widget=forms.Textarea(attrs={'class': 'form-control', "rows": 5}))
+    content = forms.CharField(label='Текст', widget=CKEditorUploadingWidget)
     captcha = CaptchaField()
 
 
@@ -31,8 +32,8 @@ class UserRegisterForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
 
 
-
 class StoicForm(forms.ModelForm):
+    content = forms.CharField(label='Рассуждение', widget=CKEditorUploadingWidget())
     class Meta:
         model = Stoic
         # fields = '__all__'
